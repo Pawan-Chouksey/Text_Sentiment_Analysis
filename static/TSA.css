@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'Adlam Display';
+    src: url('ADLaMDisplay-Regular.ttf') format('truetype'); 
+}
+@font-face {
+    font-family: 'Star';
+    src: url('Starjhol.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Star2';
+    src: url('Starjedi.ttf') format('truetype');
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction : column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #000000;
+    background-position: center;
+    background-image: url("images/download.png"); 
+/* if background.jpg is inside static folder */
+
+}
+
+.input-box {
+    background-color: #fff;
+    color: rgb(0, 0, 0); 
+    padding: 10px 20px;
+    font-size: 16px; 
+    border: 2px solid #000000; 
+    border-radius: 15px; 
+    margin-bottom: 20px; 
+    outline: none; 
+    width: 200px; 
+    font-family: 'Star2';
+}
+
+.button {
+    background-color: #ffe81f;
+    color: black;
+    border: 2px solid #000000;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-radius: 15px;
+    font-family: 'Star2', sans-serif;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* .back-video{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+
+} */
+
+
+.text{
+    color: #ffe81f;
+    font-family: 'Star', sans-serif;
+    font-size: 50px;
+    text-indent: 10px;
+}
+

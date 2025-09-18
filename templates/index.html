@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Sentiment Analysis</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='TSA.css') }}"> 
+    
+
+</head>
+<body>
+    <div class="text">
+        <p>Text Sentiment Analyse</p>
+    </div>
+
+
+    <div class="main">
+
+        <!-- <video autoplay loop muted plays-inline class="back-video">
+            <source src="{{ url_for('static', filename='videos/video2.mp4') }}" type="video/mp4">
+        </video> -->
+
+        <form method="post" action="/predict">
+            <input type="text" name="text" class="input-box" placeholder="Enter Text" style="color: rgb(0, 0, 0);">
+            <button type="submit" class="button">Analyse</button>
+        </form>
+    </div>
+</body>
+</html>
