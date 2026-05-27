@@ -1,0 +1,48 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+
+        @font-face {
+            font-family: 'Adlam Display';
+            src: url('/static/ADLaMDisplay-Regular.ttf') format('truetype'); 
+        }
+        @font-face {
+            font-family: 'Star2';
+            src: url('/static/Starjedi.ttf') format('truetype');
+        }
+
+        body {
+            font-family: 'Star2';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            
+            margin: 0;
+        }
+
+        .result {
+            font-family: 'Star2';
+            background-color: #006aff00;
+            color: #ffe81f;
+            font-size: 42px;
+            text-align: center;
+            text-indent: 10px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="result">
+        <h3>Prediction Result :</h3>
+        <p>{{ result }}</p>
+    </div>
+</body>
+</html>

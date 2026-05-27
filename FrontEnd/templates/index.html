@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Sentiment Analysis</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='TSA.css') }}">
+    <!-- <link rel="stylesheet" href="/static/TSA.css"> -->
+</head>
+
+<body>
+    <div class="text">
+        <p>Text Sentiment Analyse</p>
+    </div>
+
+    <!-- Main container split into two sides -->
+    <div class="main" style="display: flex; gap: 30px; justify-content: center; align-items: flex-start;">
+
+        <!-- LEFT SIDE: Image Upload -->
+        <div class="left-panel" style="display: flex; flex-direction: column; gap: 10px;">
+            <form method="post" action="/upload_image" enctype="multipart/form-data">
+                <input type="file" name="image" accept="image/*" class="input-box">
+                <button type="submit" class="button">Analyse</button>
+            </form>
+        </div>
+
+        <!-- RIGHT SIDE: Text Input -->
+        <div class="right-panel">
+            <form method="post" action="/predict">
+                <input type="text" name="text" class="input-box" placeholder="Enter Text" style="color: black;">
+                <button type="submit" class="button">Analyse</button>
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>
