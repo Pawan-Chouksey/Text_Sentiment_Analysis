@@ -1,65 +1,299 @@
 @font-face {
-    font-family: 'Adlam Display';
-    src: url('ADLaMDisplay-Regular.ttf') format('truetype'); 
+    font-family: space;
+    src: url("ADLaMDisplay-Regular.ttf");
 }
-@font-face {
-    font-family: 'Star';
-    src: url('Starjhol.ttf') format('truetype');
+
+* {
+    box-sizing: border-box;
 }
-@font-face {
-    font-family: 'Star2';
-    src: url('Starjedi.ttf') format('truetype');
+
+:root {
+    --ink: #f4f6ff;
+    --muted: #9199b6;
+    --line: #ffffff18;
+    --accent: #8e9cff;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    flex-direction : column;
-    align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
-    background-color: #000000;
-    background-position: center;
-    background-image: url("images/download.png");
-
+    color: var(--ink);
+    background: #060816 radial-gradient(
+        circle at 70% 20%,
+        #23306c 0,
+        transparent 28%
+    );
+    font: 15px Arial, sans-serif;
 }
 
-.input-box {
-    background-color: #fff;
-    color: rgb(0, 0, 0); 
-    padding: 10px 20px;
-    font-size: 16px; 
-    border: 2px solid #000000; 
-    border-radius: 15px; 
-    margin-bottom: 20px; 
-    outline: none; 
-    width: 200px; 
-    font-family: 'Star2';
+body:before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    opacity: 0.35;
+    background-image: radial-gradient(#fff 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: linear-gradient(#000, transparent);
 }
 
-.button {
-    background-color: #ffe81f;
-    color: black;
-    border: 2px solid #000000;
-    padding: 10px 20px;
-    font-size: 16px;
+main {
+    position: relative;
+    width: min(92%, 900px);
+    min-height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+header,
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+header {
+    height: 70px;
+    border-bottom: 1px solid var(--line);
+}
+
+footer {
+    padding: 22px 0;
+}
+
+header a {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    font: 18px space, Arial;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+header i {
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 14px var(--accent);
+}
+
+.panel {
+    position: relative;
+    width: min(100%, 680px);
+    margin: auto;
+    padding: 42px;
+    overflow: hidden;
+    background: #0b0e21e8;
+    border: 1px solid #9da8ff40;
+    border-radius: 18px;
+    box-shadow: 0 30px 90px #0009;
+}
+
+.orb {
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    right: -85px;
+    top: -85px;
+    border: 1px solid #9da8ff44;
+    border-radius: 50%;
+    box-shadow: 0 0 60px #5264e844 inset;
+}
+
+.tag {
+    margin: 0;
+    color: var(--accent);
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h1 {
+    margin: 10px 0;
+    font: 48px/1.05 space, Arial;
+}
+
+h1 em {
+    color: var(--accent);
+    font-style: normal;
+}
+
+.intro {
+    color: var(--muted);
+}
+
+nav {
+    display: flex;
+    gap: 4px;
+    margin: 28px 0 12px;
+    padding: 4px;
+    background: #050714;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+}
+
+nav button {
+    flex: 1;
+    padding: 10px;
+    color: var(--muted);
+    background: none;
+    border: 0;
+    border-radius: 6px;
     cursor: pointer;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    border-radius: 15px;
-    font-family: 'Star2', sans-serif;
 }
 
-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.active {
+    color: #fff !important;
+    background: #202747 !important;
 }
 
-
-
-.text{
-    color: #ffe81f;
-    font-family: 'Star', sans-serif;
-    font-size: 50px;
-    text-indent: 10px;
+form {
+    display: grid;
+    gap: 12px;
 }
 
+textarea,
+.upload {
+    min-height: 155px;
+    padding: 18px;
+    color: #fff;
+    background: #060816;
+    border: 1px solid #7784ca55;
+    border-radius: 9px;
+    font: inherit;
+    transition: 0.2s;
+}
+
+textarea {
+    resize: vertical;
+    outline: 0;
+}
+
+textarea:focus,
+.upload:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px #8e9cff18;
+}
+
+.upload {
+    display: grid;
+    place-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.upload strong {
+    font-size: 18px;
+}
+
+.upload small {
+    margin: 7px 0 18px;
+    color: var(--muted);
+}
+
+.upload input {
+    max-width: 100%;
+}
+
+.submit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 46px;
+    padding: 0 20px;
+    color: #080a16;
+    background: var(--accent);
+    border: 0;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.submit:hover {
+    filter: brightness(1.15);
+    transform: translateY(-1px);
+}
+
+.result {
+    --accent: #8e9cff;
+    text-align: center;
+}
+
+.result.positive {
+    --accent: #65e6b4;
+}
+
+.result.negative {
+    --accent: #ff708d;
+}
+
+.result.neutral {
+    --accent: #ffc66d;
+}
+
+.pulse {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 22px;
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 12px #ffffff05,
+        0 0 35px var(--accent);
+}
+
+.result h1 {
+    color: var(--accent);
+}
+
+blockquote {
+    margin: 28px 0;
+    padding: 18px;
+    color: #cbd0e2;
+    background: #060816;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+blockquote small {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+[hidden] {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    header {
+        height: 58px;
+    }
+
+    .panel {
+        padding: 26px 20px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    footer {
+        justify-content: center;
+        font-size: 9px;
+    }
+}
