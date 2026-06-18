@@ -1,20 +1,22 @@
-numpy==2.4.4
-pandas==3.0.2
-scikit-learn==1.8.0
-matplotlib==3.10.9
+numpy
+pandas
+scikit-learn
+matplotlib
 
-fastapi[standard]==0.136.1
-uvicorn[standard]==0.46.0
-Jinja2==3.1.6
+fastapi[standard]
+uvicorn[standard]
+gunicorn
+jinja2
 
-nltk==3.9.4
-python-multipart==0.0.20
+nltk
+python-multipart
 
-opencv-python == 4.13.0.92
-torch == 2.12.0
-Pillow == 12.2.0
-easyocr == 1.7.2
-tensorflow
+opencv-python-headless
+torch
+pillow
+easyocr
+
+tensorflow==2.19.0
 
 gensim
 
